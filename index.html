@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #222;
+            transition: 0.3s;
+        }
+
+        /* Navbar */
+        nav {
+            height: 70px;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #4f46e5;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #4f46e5;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #3730a3;
+            transform: translateY(-2px);
+        }
+
+        /* Features */
+        .features {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #4f46e5;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: white;
+            margin-top: 50px;
+        }
+
+        /* Dark Mode */
+        body.dark {
+            background: #111827;
+            color: white;
+        }
+
+        body.dark nav {
+            background: #1f2937;
+        }
+
+        body.dark nav a {
+            color: white;
+        }
+
+        body.dark .hero p,
+        body.dark .card p {
+            color: #cbd5e1;
+        }
+
+        body.dark .card {
+            background: #1f2937;
+        }
+
+        body.dark .logo {
+            color: #818cf8;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            nav {
+                padding: 0 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">MyWebsite</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <button class="btn" onclick="toggleDarkMode()">🌙</button>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Welcome to <span>My Website</span></h1>
+
+        <p>
+            A simple, modern and responsive website built using
+            HTML, CSS and JavaScript.
+        </p>
+
+        <button class="btn" onclick="showMessage()">
+            Get Started
+        </button>
+    </section>
+
+
+    <!-- Features -->
+    <section class="features" id="features">
+
+        <h2>Our Features</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🚀 Fast</h3>
+                <p>
+                    Lightweight design that loads quickly
+                    and provides a smooth experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📱 Responsive</h3>
+                <p>
+                    Works perfectly on desktops, tablets
+                    and mobile devices.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Interactive</h3>
+                <p>
+                    JavaScript adds useful interactions
+                    and dynamic behavior.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section class="features" id="about">
+        <h2>About</h2>
+
+        <p>
+            This is a basic example website that demonstrates
+            how HTML, CSS and JavaScript work together.
+        </p>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 MyWebsite. All rights reserved.</p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        function showMessage() {
+            alert("Welcome! You clicked the Get Started button.");
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+        }
+
+    </script>
+
+</body>
+</html>
